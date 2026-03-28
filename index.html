@@ -32,7 +32,7 @@
             <a href="#servicios" class="cta-main">Ver Todos los Trámites</a>
         </div>
         <div class="hero-image">
-            <img src="C:\Users\tonir\Downloads\image_2.png" alt="GestoriaTramitium Recepción Profesional">
+            <img src="https://drive.google.com/uc?export=view&id=1JFRaJd1fKoAGmvTy8u5s_3144wNVeqD_" alt="GestoriaTramitium Recepción Profesional">
         </div>
     </div>
 </section>
@@ -41,7 +41,7 @@
     <div class="container">
         <div class="section-header">
             <span class="sub-title">Nuestros Servicios de Tramitación</span>
-            <h2>Catálogo Completo de Gestiones</h2>
+            <h2>Catálogo Completo</h2>
         </div>
 
         <h3 class="category-title"><i class="fa-solid fa-house-chimney"></i> Propiedad y Registro</h3>
@@ -55,13 +55,13 @@
             <div class="service-card">
                 <div class="service-icon-container"><i class="fa-solid fa-file-contract"></i></div>
                 <h3>Certificación de Dominio</h3>
-                <p>Propiedad y titularidad actual del inmueble con validez oficial.</p>
+                <p>Propiedad y titularidad actual del inmueble.</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdmdEooY22JpDGJ7arMW2-H1IZ99RW9dqCH8C1Ai9Wh0oXoJw/viewform?usp=header" class="btn-service">SOLICITAR</a>
             </div>
             <div class="service-card">
                 <div class="service-icon-container"><i class="fa-solid fa-house-lock"></i></div>
                 <h3>Certificación de Cargas</h3>
-                <p>Verifica el estado de deudas o gravámenes registrales.</p>
+                <p>Estado de deudas o gravámenes registrales.</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX22_90FlvsZvMdv0XqBRUU6LWQQbL6edG0oTKm97APpkxBA/viewform?usp=header" class="btn-service">SOLICITAR</a>
             </div>
             <div class="service-card">
@@ -184,39 +184,63 @@
                 <i class="fa-solid fa-mobile-screen-button"></i>
                 <h4>Bizum</h4>
                 <p class="pay-data">628 309 463</p>
-                <span class="tag">Instantáneo</span>
             </div>
             <div class="payment-card">
                 <i class="fa-solid fa-building-columns"></i>
                 <h4>Transferencia</h4>
                 <p class="pay-data">ES43 1586 0001 4302 1849 111</p>
-                <span class="tag">Confirmación 24h</span>
             </div>
         </div>
     </div>
 </section>
 
-<section id="aviso-legal" class="section container">
-    <hr>
-    <br>
-    <h2>Aviso Legal</h2>
-    <p>Gestoría Tramitium es una plataforma online dedicada a la intermediación y gestión de trámites ante registros públicos y organismos oficiales. Los precios y tiempos de gestión pueden variar según la administración pública correspondiente.</p>
-</section>
+<div id="aviso-legal-popup" class="popup">
+    <div class="popup-content">
+        <span class="popup-close" onclick="closePopup('aviso-legal')">&times;</span>
+        <h2>Aviso Legal</h2>
+        <p>Gestoría Tramitium es una plataforma online dedicada a la intermediación y gestión de trámites ante registros públicos y organismos oficiales. Los precios y tiempos de gestión pueden variar según la administración pública correspondiente.</p>
+    </div>
+</div>
 
-<section id="politica-privacidad" class="section container bg-light" style="border-radius: 12px; padding: 40px; margin-bottom: 40px;">
-    <h2>Política de Privacidad</h2>
-    <p>Tratamos sus datos con absoluta confidencialidad bajo el RGPD. Sus datos solo se utilizarán para la gestión del trámite solicitado y no se cederán a terceros ajenos al proceso administrativo.</p>
-</section>
+<div id="politica-privacidad-popup" class="popup">
+    <div class="popup-content">
+        <span class="popup-close" onclick="closePopup('politica-privacidad')">&times;</span>
+        <h2>Política de Privacidad</h2>
+        <p>Tratamos sus datos con absoluta confidencialidad bajo el RGPD. Sus datos solo se utilizarán para la gestión del trámite solicitado y no se cederán a terceros ajenos al proceso administrativo.</p>
+    </div>
+</div>
 
 <footer>
     <div class="container footer-content">
         <p>&copy; 2026 Gestoría Tramitium. Todos los derechos reservados.</p>
         <div class="footer-links">
-            <a href="#aviso-legal">Aviso Legal</a> | 
-            <a href="#politica-privacidad">Política de Privacidad</a>
+            <a href="javascript:void(0)" onclick="openPopup('aviso-legal')">Aviso Legal</a> | 
+            <a href="javascript:void(0)" onclick="openPopup('politica-privacidad')">Política de Privacidad</a>
         </div>
     </div>
 </footer>
+
+<script>
+    // Función para abrir el pop-up
+    function openPopup(popupId) {
+        document.getElementById(popupId + '-popup').style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Evita el scroll detrás
+    }
+
+    // Función para cerrar el pop-up
+    function closePopup(popupId) {
+        document.getElementById(popupId + '-popup').style.display = 'none';
+        document.body.style.overflow = 'auto'; // Devuelve el scroll
+    }
+
+    // Cerrar si se hace clic fuera de la caja blanca
+    window.onclick = function(event) {
+        if (event.target.className === 'popup') {
+            event.target.style.display = "none";
+            document.body.style.overflow = 'auto';
+        }
+    }
+</script>
 
 </body>
 </html>
