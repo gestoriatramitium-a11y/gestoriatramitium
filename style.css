@@ -1,0 +1,261 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #003366;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar h1 {
+    font-size: 24px;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 20px;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h2 {
+    font-size: 36px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.cta-button {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #e65c00;
+}
+
+/* Servicios Section */
+#servicios {
+    padding: 50px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+#servicios h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.service-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    width: 22%;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.service h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.service a {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.service a:hover {
+    background-color: #e65c00;
+}
+
+/* Testimonios Section */
+#testimonios {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#testimonios h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.testimonios-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonio {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 45%;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.testimonio .comentario {
+    font-style: italic;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.testimonio .cliente {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.testimonio .puntuacion {
+    color: gold;
+    font-size: 20px;
+}
+
+/* Clientes Section */
+#clientes {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#clientes h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.clientes-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.cliente-logo {
+    width: 20%;
+    margin: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cliente-logo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Payment Section */
+#pago {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.payment-methods {
+    font-size: 18px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Testimonios */
+#testimonios {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.testimonios-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonio {
+    background-color: white;
+    padding: 20px;
+    width: 45%;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.testimonio .comentario {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.testimonio .cliente {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
