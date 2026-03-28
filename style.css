@@ -7,8 +7,7 @@
 
 /* Body */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     color: #333;
 }
@@ -16,15 +15,15 @@ body {
 /* Navbar */
 .navbar {
     background-color: #003366;
-    padding: 20px;
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
 }
 
 .navbar h1 {
-    font-size: 24px;
+    color: white;
+    font-size: 28px;
 }
 
 .navbar nav ul {
@@ -40,6 +39,11 @@ body {
     color: white;
     text-decoration: none;
     font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: #ff6600;
 }
 
 /* Hero Section */
@@ -47,24 +51,26 @@ body {
     background-color: #003366;
     color: white;
     text-align: center;
-    padding: 50px 20px;
+    padding: 80px 20px;
 }
 
-.hero h2 {
-    font-size: 36px;
+.hero h1 {
+    font-size: 40px;
 }
 
 .hero p {
-    font-size: 20px;
+    font-size: 18px;
     margin: 20px 0;
 }
 
 .cta-button {
     background-color: #ff6600;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     text-decoration: none;
     border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s;
 }
 
 .cta-button:hover {
@@ -73,13 +79,13 @@ body {
 
 /* Servicios Section */
 #servicios {
-    padding: 50px 20px;
     background-color: white;
+    padding: 50px 20px;
     text-align: center;
 }
 
 #servicios h2 {
-    font-size: 30px;
+    font-size: 32px;
     margin-bottom: 40px;
 }
 
@@ -93,20 +99,21 @@ body {
     background-color: #003366;
     color: white;
     padding: 20px;
-    width: 22%;
-    margin: 10px;
-    border-radius: 5px;
+    width: 30%;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .service h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 22px;
+    margin-bottom: 15px;
 }
 
 .service p {
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
 .service a {
@@ -123,13 +130,13 @@ body {
 
 /* Testimonios Section */
 #testimonios {
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     padding: 50px 20px;
     text-align: center;
 }
 
 #testimonios h2 {
-    font-size: 30px;
+    font-size: 32px;
     margin-bottom: 40px;
 }
 
@@ -140,19 +147,19 @@ body {
 }
 
 .testimonio {
-    background-color: #ffffff;
-    padding: 20px;
+    background-color: white;
+    padding: 25px;
     width: 45%;
     margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .testimonio .comentario {
     font-style: italic;
-    margin-bottom: 15px;
     font-size: 16px;
+    margin-bottom: 15px;
 }
 
 .testimonio .cliente {
@@ -167,13 +174,13 @@ body {
 
 /* Clientes Section */
 #clientes {
-    background-color: #f9f9f9;
+    background-color: #f4f4f4;
     padding: 50px 20px;
     text-align: center;
 }
 
 #clientes h2 {
-    font-size: 30px;
+    font-size: 32px;
     margin-bottom: 40px;
 }
 
@@ -185,8 +192,7 @@ body {
 
 .cliente-logo {
     width: 20%;
-    margin: 15px;
-    padding: 20px;
+    margin: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -215,47 +221,4 @@ footer {
     color: white;
     padding: 20px 0;
     text-align: center;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Testimonios */
-#testimonios {
-    padding: 50px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-.testimonios-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.testimonio {
-    background-color: white;
-    padding: 20px;
-    width: 45%;
-    margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.testimonio .comentario {
-    font-style: italic;
-    margin-bottom: 15px;
-}
-
-.testimonio .cliente {
-    font-weight: bold;
-    margin-bottom: 10px;
 }
