@@ -1,57 +1,99 @@
-:root {
-    --primary: #003366;
-    --secondary: #ff6600;
-    --bg-light: #f8fbff;
-    --text-main: #2d3436;
-    --text-muted: #636e72;
-    --white: #ffffff;
-    --shadow: 0 10px 20px rgba(0,0,0,0.05);
+CSS
+/* =========================================
+   1. RESET Y CONFIGURACIÓN BASE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+    --primary-color: #003366;    /* Azul corporativo */
+    --secondary-color: #ff6600;  /* Naranja de acción */
+    --bg-light: #f9f9f9;
+    --white: #ffffff;
+    --text-dark: #333333;
+    --transition: 0.3s ease;
+}
 
 body {
-    font-family: 'Inter', sans-serif;
-    color: var(--text-main);
-    background-color: var(--white);
+    font-family: 'Inter', 'Arial', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
     line-height: 1.6;
     scroll-behavior: smooth;
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .text-center { text-align: center; }
 
-/* Navbar */
+/* =========================================
+   2. NAVBAR
+   ========================================= */
 .navbar {
+    background-color: var(--primary-color);
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
-    background: var(--white);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    position: sticky; top: 0; z-index: 1000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.logo-text { font-weight: 800; font-size: 1.5rem; color: var(--primary); }
-.logo-text span { color: var(--secondary); }
+.logo-text {
+    color: var(--white);
+    font-weight: 800;
+    font-size: 1.5rem;
+}
 
-.nav-links { display: flex; list-style: none; align-items: center; }
-.nav-links li { margin-left: 25px; }
-.nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; }
-.nav-links a:hover { color: var(--secondary); }
+.logo-text span {
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
 
 .btn-contact {
-    background: var(--primary);
-    color: white !important;
-    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    padding: 8px 18px;
     border-radius: 5px;
 }
 
-/* Hero Section Dual */
+/* =========================================
+   3. HERO SECTION (Diseño Dual)
+   ========================================= */
 .hero {
     background: linear-gradient(135deg, #003366 0%, #001a33 100%);
     color: var(--white);
-    padding: 80px 0;
+    padding: 100px 0;
+    overflow: hidden;
 }
 
 .hero-container {
@@ -63,42 +105,74 @@ body {
     padding: 0 20px;
 }
 
-.hero-text-block { flex: 1; padding-right: 50px; }
-.hero-image { flex: 1; text-align: right; }
-.hero-image img { 
-    max-width: 100%; 
-    border-radius: 12px; 
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+.hero-text-block {
+    flex: 1;
+    padding-right: 50px;
 }
 
-.hero h1 { font-size: 3.2rem; margin-bottom: 20px; line-height: 1.1; }
-.highlight { color: var(--secondary); }
-.hero p { font-size: 1.2rem; margin-bottom: 35px; opacity: 0.9; }
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.highlight {
+    color: var(--secondary-color);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    opacity: 0.9;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
 
 .cta-main {
-    background: var(--secondary);
+    background-color: var(--secondary-color);
     color: var(--white);
     padding: 15px 35px;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 1.1rem;
     display: inline-block;
+    transition: var(--transition);
 }
 
-/* Servicios */
+.cta-main:hover {
+    background-color: #e65c00;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   4. SERVICIOS (Grid de 18 trámites)
+   ========================================= */
 .section { padding: 80px 0; }
-.bg-light { background-color: var(--bg-light); }
-.section-header { text-align: center; margin-bottom: 50px; }
-.sub-title { color: var(--secondary); text-transform: uppercase; font-weight: 800; font-size: 0.9rem; }
 
-.category-title {
-    font-size: 1.8rem;
-    color: var(--primary);
-    margin: 50px 0 25px;
-    border-left: 5px solid var(--secondary);
-    padding-left: 15px;
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    text-align: center;
 }
-.category-title i { margin-right: 15px; color: var(--secondary); }
 
 .service-grid {
     display: grid;
@@ -107,48 +181,167 @@ body {
 }
 
 .service-card {
-    background: var(--white);
+    background-color: var(--white);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: var(--shadow);
-    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    border: 1px solid #eee;
+    transition: var(--transition);
     display: flex;
     flex-direction: column;
 }
-.service-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
 
-.service-icon-container { font-size: 2.2rem; color: var(--primary); margin-bottom: 15px; }
-.service-card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--primary); }
-.service-card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; flex-grow: 1; }
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
 
 .btn-service {
-    text-align: center;
-    border: 1px solid var(--secondary);
-    color: var(--secondary);
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
     text-decoration: none;
-    padding: 8px;
-    border-radius: 4px;
-    font-weight: 700;
-    font-size: 0.8rem;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
 }
-.btn-service:hover { background: var(--secondary); color: white; }
 
-/* Pagos */
-.payment-grid { display: flex; justify-content: center; gap: 30px; margin-top: 40px; flex-wrap: wrap; }
-.payment-card { background: white; padding: 25px; border-radius: 12px; width: 300px; box-shadow: var(--shadow); }
-.pay-data { font-family: monospace; font-weight: 700; color: var(--primary); font-size: 1.1rem; }
-.tag { background: #fff3e0; color: #e65100; padding: 2px 10px; border-radius: 20px; font-size: 0.75rem; }
+.btn-service:hover {
+    background-color: var(--secondary-color);
+}
 
-/* Footer */
-footer { background: var(--primary); color: white; padding: 40px 0; }
-.footer-content { display: flex; justify-content: space-between; align-items: center; }
-.footer-links a { color: white; margin-left: 15px; text-decoration: none; opacity: 0.8; }
+/* =========================================
+   5. TESTIMONIOS Y CLIENTES
+   ========================================= */
+.bg-light { background-color: #f0f4f8; }
 
-/* Responsivo */
-@media (max-width: 768px) {
+.testimonios-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.testimonio {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    width: 45%;
+    min-width: 300px;
+}
+
+.puntuacion { color: #ffcc00; font-size: 1.2rem; margin-top: 10px; }
+
+.clientes-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 0.7;
+}
+
+.cliente-logo img {
+    max-width: 150px;
+    height: auto;
+    filter: grayscale(100%);
+    transition: 0.3s;
+    margin: 20px;
+}
+
+.cliente-logo img:hover { filter: grayscale(0%); opacity: 1; }
+
+/* =========================================
+   6. PAGO Y FOOTER
+   ========================================= */
+.payment-methods p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: var(--primary-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: none;
+    margin: 0 10px;
+    opacity: 0.8;
+}
+
+footer a:hover { opacity: 1; text-decoration: underline; }
+
+/* =========================================
+   7. POP-UPS (Ventanas Emergentes)
+   ========================================= */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(4px);
+}
+
+.popup-content {
+    background-color: var(--white);
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.popup-close {
+    position: absolute;
+    top: 20px; right: 25px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #bbb;
+}
+
+.popup-close:hover { color: var(--secondary-color); }
+
+/* =========================================
+   8. RESPONSIVE
+   ========================================= */
+@media (max-width: 992px) {
     .hero-container { flex-direction: column; text-align: center; }
-    .hero-text-block { padding-right: 0; margin-bottom: 40px; }
-    .hero h1 { font-size: 2.4rem; }
-    .nav-links { display: none; }
-    .footer-content { flex-direction: column; gap: 20px; }
+    .hero-text-block { padding-right: 0; margin-bottom: 50px; }
+    .hero h1 { font-size: 2.8rem; }
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Ocultar menú en móvil para simplicidad */
+    .testimonio { width: 100%; }
 }
