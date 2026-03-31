@@ -180,22 +180,25 @@ body {
     background: white;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease; /* Asegúrate de que la transición sea suave */
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px); /* Puedes aumentar el movimiento para hacerlo más notorio */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra más intensa */
 }
 
 .service-card h3 {
     color: var(--primary);
-    margin-bottom: 10px;
+    margin-bottom: 15px; /* Añadido para mayor separación */
+    font-size: 1.1rem; /* Aumentamos el tamaño de la fuente */
 }
 
 .service-card p {
-    font-size: 0.95rem;
+    font-size: 1rem; /* Aumentamos un poco el tamaño de la fuente para más legibilidad */
     margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.7); /* Un tono más oscuro para el texto */
 }
 
 /* =========================================
