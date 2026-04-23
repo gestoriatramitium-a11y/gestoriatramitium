@@ -308,20 +308,122 @@
     </div>
 </section>
 
-<section id="testimonios" class="section bg-light">
+<section id="testimonios" class="section bg-light testimonials-section">
     <div class="container text-center">
-        <h2>Opiniones de Clientes</h2>
-        <div class="testimonios-container">
-            <div class="testimonio">
-                <p class="comentario">"Servicio excelente y rápido, muy recomendable."</p>
-                <p class="cliente">- Luis Rodríguez, Madrid</p>
-                <p class="puntuacion">⭐⭐⭐⭐⭐</p>
+        <div class="section-header services-header testimonials-header">
+            <span class="section-eyebrow">Prueba social</span>
+            <h2>Opiniones de Clientes</h2>
+            <p>Valoraciones de ejemplo para reforzar confianza sin recargar visualmente la página.</p>
+        </div>
+
+        <div class="testimonials-carousel" aria-label="Carrusel de opiniones de clientes">
+            <button class="carousel-control prev" type="button" aria-label="Ver opiniones anteriores">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="testimonios-viewport">
+                <div class="testimonios-track">
+                    <article class="testimonio-slide">
+                        <div class="testimonio">
+                            <p class="comentario">“Servicio excelente y rápido, muy recomendable.”</p>
+                            <p class="cliente">Luis Rodríguez · Madrid</p>
+                            <p class="puntuacion">★★★★★</p>
+                        </div>
+                    </article>
+
+                    <article class="testimonio-slide">
+                        <div class="testimonio">
+                            <p class="comentario">“Muy profesionales, me facilitaron mucho todo el proceso.”</p>
+                            <p class="cliente">Carmen Gómez · Valencia</p>
+                            <p class="puntuacion">★★★★★</p>
+                        </div>
+                    </article>
+
+                    <article class="testimonio-slide">
+                        <div class="testimonio">
+                            <p class="comentario">“Pedí una nota simple y la recibí antes de lo esperado.”</p>
+                            <p class="cliente">Marta Pérez · Sevilla</p>
+                            <p class="puntuacion">★★★★★</p>
+                        </div>
+                    </article>
+
+                    <article class="testimonio-slide">
+                        <div class="testimonio">
+                            <p class="comentario">“El informe DGT me ayudó a evitar una mala compra.”</p>
+                            <p class="cliente">Javier Molina · Zaragoza</p>
+                            <p class="puntuacion">★★★★★</p>
+                        </div>
+                    </article>
+
+                    <article class="testimonio-slide">
+                        <div class="testimonio">
+                            <p class="comentario">“Todo claro, sin llamadas innecesarias y con seguimiento rápido.”</p>
+                            <p class="cliente">Laura Sánchez · Málaga</p>
+                            <p class="puntuacion">★★★★★</p>
+                        </div>
+                    </article>
+
+                    <article class="testimonio-slide">
+                        <div class="testimonio">
+                            <p class="comentario">“Solicité un certificado y en pocos pasos quedó resuelto.”</p>
+                            <p class="cliente">Daniel Ortega · Bilbao</p>
+                            <p class="puntuacion">★★★★★</p>
+                        </div>
+                    </article>
+
+                    <article class="testimonio-slide">
+                        <div class="testimonio">
+                            <p class="comentario">“Diseño simple, trámite claro y respuesta bastante rápida.”</p>
+                            <p class="cliente">Patricia Navarro · Murcia</p>
+                            <p class="puntuacion">★★★★★</p>
+                        </div>
+                    </article>
+
+                    <article class="testimonio-slide">
+                        <div class="testimonio">
+                            <p class="comentario">“Me gustó que cada servicio estuviera bien explicado y ordenado.”</p>
+                            <p class="cliente">Álvaro Romero · Alicante</p>
+                            <p class="puntuacion">★★★★★</p>
+                        </div>
+                    </article>
+
+                    <article class="testimonio-slide">
+                        <div class="testimonio">
+                            <p class="comentario">“Gestionaron mi certificado de nacimiento sin complicaciones.”</p>
+                            <p class="cliente">Natalia Vega · Valladolid</p>
+                            <p class="puntuacion">★★★★★</p>
+                        </div>
+                    </article>
+
+                    <article class="testimonio-slide">
+                        <div class="testimonio">
+                            <p class="comentario">“La renovación del permiso fue mucho más fácil de lo que pensaba.”</p>
+                            <p class="cliente">Sergio Martín · Granada</p>
+                            <p class="puntuacion">★★★★★</p>
+                        </div>
+                    </article>
+
+                    <article class="testimonio-slide">
+                        <div class="testimonio">
+                            <p class="comentario">“Buen trato, instrucciones claras y cero sensación de pérdida de tiempo.”</p>
+                            <p class="cliente">Elena Castro · A Coruña</p>
+                            <p class="puntuacion">★★★★★</p>
+                        </div>
+                    </article>
+
+                    <article class="testimonio-slide">
+                        <div class="testimonio">
+                            <p class="comentario">“Ideal para quien quiere resolver trámites online sin desplazarse.”</p>
+                            <p class="cliente">Rubén Díaz · Palma</p>
+                            <p class="puntuacion">★★★★★</p>
+                        </div>
+                    </article>
+                </div>
             </div>
-            <div class="testimonio">
-                <p class="comentario">"Muy profesionales, me facilitaron mucho el proceso."</p>
-                <p class="cliente">- Carmen Gómez, Valencia</p>
-                <p class="puntuacion">⭐⭐⭐⭐⭐</p>
-            </div>
+
+            <button class="carousel-control next" type="button" aria-label="Ver más opiniones">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
         </div>
     </div>
 </section>
@@ -432,6 +534,76 @@
 
     if (serviceSelect) {
         serviceSelect.addEventListener('change', (event) => setActiveCategory(event.target.value));
+    }
+
+    const testimonialsCarousel = document.querySelector('.testimonials-carousel');
+
+    if (testimonialsCarousel) {
+        const track = testimonialsCarousel.querySelector('.testimonios-track');
+        const slides = Array.from(track.querySelectorAll('.testimonio-slide'));
+        const prevButton = testimonialsCarousel.querySelector('.carousel-control.prev');
+        const nextButton = testimonialsCarousel.querySelector('.carousel-control.next');
+        let currentIndex = 0;
+        let autoPlay;
+
+        function getVisibleTestimonials() {
+            if (window.innerWidth <= 640) return 1;
+            if (window.innerWidth <= 1024) return 2;
+            return 5;
+        }
+
+        function getMaxIndex() {
+            return Math.max(0, slides.length - getVisibleTestimonials());
+        }
+
+        function updateCarousel(animate = true) {
+            const safeIndex = Math.min(currentIndex, getMaxIndex());
+            currentIndex = safeIndex;
+            track.style.transition = animate ? 'transform 0.45s ease' : 'none';
+            const offset = slides[currentIndex] ? slides[currentIndex].offsetLeft : 0;
+            track.style.transform = `translateX(-${offset}px)`;
+        }
+
+        function goNext() {
+            currentIndex = currentIndex >= getMaxIndex() ? 0 : currentIndex + 1;
+            updateCarousel();
+        }
+
+        function goPrev() {
+            currentIndex = currentIndex <= 0 ? getMaxIndex() : currentIndex - 1;
+            updateCarousel();
+        }
+
+        function startAutoPlay() {
+            stopAutoPlay();
+            autoPlay = setInterval(goNext, 2800);
+        }
+
+        function stopAutoPlay() {
+            if (autoPlay) {
+                clearInterval(autoPlay);
+            }
+        }
+
+        nextButton.addEventListener('click', () => {
+            goNext();
+            startAutoPlay();
+        });
+
+        prevButton.addEventListener('click', () => {
+            goPrev();
+            startAutoPlay();
+        });
+
+        testimonialsCarousel.addEventListener('mouseenter', stopAutoPlay);
+        testimonialsCarousel.addEventListener('mouseleave', startAutoPlay);
+        testimonialsCarousel.addEventListener('focusin', stopAutoPlay);
+        testimonialsCarousel.addEventListener('focusout', startAutoPlay);
+
+        window.addEventListener('resize', () => updateCarousel(false));
+
+        updateCarousel(false);
+        startAutoPlay();
     }
 </script>
 
