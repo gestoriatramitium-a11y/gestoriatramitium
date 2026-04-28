@@ -44,11 +44,12 @@
             </p>
 
             <a href="#servicios" class="cta-main">
-                Ver Todos los Trámites
+                Ver Todos los los Trámites
             </a>
         </div>
     </div>
 </section>
+
 <section id="servicios" class="section services-section">
     <div class="container">
         <div class="section-header services-header">
@@ -428,26 +429,100 @@
     </div>
 </section>
 
-<section id="clientes" class="section">
+<section id="clientes" class="section clients-section">
     <div class="container text-center">
-        <h2>Empresas que confían en nosotros</h2>
+        <h2>Empresas en las que confiamos nosotros</h2>
 
-        <div class="clientes-container">
-            <div class="cliente-logo">
-                <img src="img/logo-1.png" alt="Empresa 1">
+        <div class="clientes-carousel" aria-label="Carrusel de empresas en las que confiamos">
+            <button class="carousel-control prev clientes-prev" type="button" aria-label="Ver empresas anteriores">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="clientes-viewport">
+                <div class="clientes-track">
+                    <article class="cliente-slide">
+                        <div class="cliente-logo">
+                            <img src="img/logo-1.png" alt="Empresa 1">
+                        </div>
+                    </article>
+
+                    <article class="cliente-slide">
+                        <div class="cliente-logo">
+                            <img src="img/logo-2.png" alt="Empresa 2">
+                        </div>
+                    </article>
+
+                    <article class="cliente-slide">
+                        <div class="cliente-logo">
+                            <img src="img/logo-3.png" alt="Empresa 3">
+                        </div>
+                    </article>
+
+                    <article class="cliente-slide">
+                        <div class="cliente-logo">
+                            <img src="img/logo-4.jfif" alt="Empresa 4">
+                        </div>
+                    </article>
+
+                    <article class="cliente-slide">
+                        <div class="cliente-logo">
+                            <img src="img/logo-5.png" alt="Empresa 5">
+                        </div>
+                    </article>
+
+                    <article class="cliente-slide">
+                        <div class="cliente-logo">
+                            <img src="img/logo-6.png" alt="Empresa 6">
+                        </div>
+                    </article>
+
+                    <article class="cliente-slide">
+                        <div class="cliente-logo">
+                            <img src="img/logo-7.png" alt="Empresa 7">
+                        </div>
+                    </article>
+
+                    <article class="cliente-slide">
+                        <div class="cliente-logo">
+                            <img src="img/logo-8.png" alt="Empresa 8">
+                        </div>
+                    </article>
+
+                    <article class="cliente-slide">
+                        <div class="cliente-logo">
+                            <img src="img/logo-9.png" alt="Empresa 9">
+                        </div>
+                    </article>
+
+                    <article class="cliente-slide">
+                        <div class="cliente-logo">
+                            <img src="img/logo-10.png" alt="Empresa 10">
+                        </div>
+                    </article>
+
+                    <article class="cliente-slide">
+                        <div class="cliente-logo">
+                            <img src="img/logo-11.png" alt="Empresa 11">
+                        </div>
+                    </article>
+
+                    <article class="cliente-slide">
+                        <div class="cliente-logo">
+                            <img src="img/logo-12.png" alt="Empresa 12">
+                        </div>
+                    </article>
+
+                    <article class="cliente-slide">
+                        <div class="cliente-logo">
+                            <img src="img/logo-13.png" alt="Empresa 13">
+                        </div>
+                    </article>
+                </div>
             </div>
 
-            <div class="cliente-logo">
-                <img src="img/logo-2.png" alt="Empresa 2">
-            </div>
-
-            <div class="cliente-logo">
-                <img src="img/logo-3.png" alt="Empresa 3">
-            </div>
-
-            <div class="cliente-logo">
-                <img src="img/logo-4.jfif" alt="Empresa 4">
-            </div>
+            <button class="carousel-control next clientes-next" type="button" aria-label="Ver más empresas">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
         </div>
     </div>
 </section>
@@ -604,6 +679,76 @@
 
         updateCarousel(false);
         startAutoPlay();
+    }
+
+    const clientesCarousel = document.querySelector('.clientes-carousel');
+
+    if (clientesCarousel) {
+        const track = clientesCarousel.querySelector('.clientes-track');
+        const slides = Array.from(track.querySelectorAll('.cliente-slide'));
+        const prevButton = clientesCarousel.querySelector('.clientes-prev');
+        const nextButton = clientesCarousel.querySelector('.clientes-next');
+        let currentIndex = 0;
+        let autoPlayClientes;
+
+        function getVisibleClientes() {
+            if (window.innerWidth <= 640) return 1;
+            if (window.innerWidth <= 1024) return 2;
+            return 4;
+        }
+
+        function getClientesMaxIndex() {
+            return Math.max(0, slides.length - getVisibleClientes());
+        }
+
+        function updateClientesCarousel(animate = true) {
+            const safeIndex = Math.min(currentIndex, getClientesMaxIndex());
+            currentIndex = safeIndex;
+            track.style.transition = animate ? 'transform 0.45s ease' : 'none';
+            const offset = slides[currentIndex] ? slides[currentIndex].offsetLeft : 0;
+            track.style.transform = `translateX(-${offset}px)`;
+        }
+
+        function goClientesNext() {
+            currentIndex = currentIndex >= getClientesMaxIndex() ? 0 : currentIndex + 1;
+            updateClientesCarousel();
+        }
+
+        function goClientesPrev() {
+            currentIndex = currentIndex <= 0 ? getClientesMaxIndex() : currentIndex - 1;
+            updateClientesCarousel();
+        }
+
+        function startClientesAutoPlay() {
+            stopClientesAutoPlay();
+            autoPlayClientes = setInterval(goClientesNext, 2600);
+        }
+
+        function stopClientesAutoPlay() {
+            if (autoPlayClientes) {
+                clearInterval(autoPlayClientes);
+            }
+        }
+
+        nextButton.addEventListener('click', () => {
+            goClientesNext();
+            startClientesAutoPlay();
+        });
+
+        prevButton.addEventListener('click', () => {
+            goClientesPrev();
+            startClientesAutoPlay();
+        });
+
+        clientesCarousel.addEventListener('mouseenter', stopClientesAutoPlay);
+        clientesCarousel.addEventListener('mouseleave', startClientesAutoPlay);
+        clientesCarousel.addEventListener('focusin', stopClientesAutoPlay);
+        clientesCarousel.addEventListener('focusout', startClientesAutoPlay);
+
+        window.addEventListener('resize', () => updateClientesCarousel(false));
+
+        updateClientesCarousel(false);
+        startClientesAutoPlay();
     }
 </script>
 
