@@ -152,7 +152,7 @@ body {
 }
 
 /* =========================================
-   SERVICIOS
+   SECCIONES GENERALES
    ========================================= */
 .section {
     padding: 80px 0;
@@ -165,6 +165,186 @@ body {
     margin-bottom: 16px;
 }
 
+.section-eyebrow {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(11, 58, 110, 0.08);
+    color: var(--primary);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-bottom: 14px;
+}
+
+/* =========================================
+   QUIÉNES SOMOS
+   ========================================= */
+.about-section {
+    background:
+        radial-gradient(circle at top left, rgba(255, 106, 0, 0.10), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f5f7fb 100%);
+}
+
+.about-wrapper {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    min-height: 560px;
+    box-shadow: 0 28px 70px rgba(11, 58, 110, 0.18);
+    border: 1px solid rgba(11, 58, 110, 0.08);
+    background: white;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 560px;
+    object-fit: cover;
+    display: block;
+}
+
+.about-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(5, 30, 60, 0.35), transparent 45%);
+    pointer-events: none;
+}
+
+.about-experience {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 18px;
+    padding: 16px 20px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.14);
+}
+
+.about-experience strong {
+    display: block;
+    color: var(--secondary);
+    font-size: 1.7rem;
+    line-height: 1;
+    font-weight: 800;
+}
+
+.about-experience span {
+    display: block;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+
+.about-content h2 {
+    color: var(--primary);
+    font-size: 2.45rem;
+    line-height: 1.15;
+    margin-bottom: 24px;
+}
+
+.about-content p {
+    color: rgba(31, 41, 55, 0.82);
+    font-size: 1.04rem;
+    margin-bottom: 18px;
+}
+
+.about-highlight {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 18px;
+    background: linear-gradient(135deg, rgba(11, 58, 110, 0.96), rgba(8, 42, 80, 0.96));
+    color: white;
+    border-radius: 22px;
+    padding: 24px;
+    margin: 28px 0;
+    box-shadow: 0 18px 40px rgba(11, 58, 110, 0.18);
+}
+
+.about-highlight i {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: rgba(255, 106, 0, 0.18);
+    color: var(--secondary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.45rem;
+}
+
+.about-highlight h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.about-highlight p {
+    color: rgba(255, 255, 255, 0.82);
+    margin: 0;
+}
+
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 28px 0;
+}
+
+.about-values div {
+    background: white;
+    border: 1px solid rgba(11, 58, 110, 0.08);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 26px rgba(11, 58, 110, 0.06);
+}
+
+.about-values i {
+    color: var(--secondary);
+    font-size: 1.1rem;
+}
+
+.about-values span {
+    color: var(--primary);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(11, 58, 110, 0.22);
+    transition: all 0.3s ease;
+}
+
+.cta-secondary:hover {
+    background: #082f5a;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   SERVICIOS
+   ========================================= */
 .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -183,18 +363,6 @@ body {
     max-width: 760px;
     margin: 0 auto 42px;
     text-align: center;
-}
-
-.section-eyebrow {
-    display: inline-block;
-    padding: 8px 14px;
-    border-radius: 999px;
-    background: rgba(11, 58, 110, 0.08);
-    color: var(--primary);
-    font-size: 0.88rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    margin-bottom: 14px;
 }
 
 .services-header p {
@@ -646,29 +814,19 @@ footer a {
 /* =========================================
    RESPONSIVE
    ========================================= */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .hero {
-        text-align: center;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero h2 {
-        font-size: 1.5rem;
-    }
-
-    .cta-main {
-        width: 100%;
-    }
-}
-
 @media (max-width: 1024px) {
+    .about-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        min-height: 460px;
+    }
+
+    .about-image img {
+        min-height: 460px;
+    }
+
     .featured-services {
         grid-template-columns: 1fr;
     }
@@ -691,6 +849,42 @@ footer a {
 }
 
 @media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-main {
+        width: 100%;
+    }
+
+    .about-section {
+        padding-top: 64px;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+    }
+
+    .about-values {
+        grid-template-columns: 1fr;
+    }
+
+    .about-highlight {
+        grid-template-columns: 1fr;
+    }
+
     .services-section {
         padding-top: 64px;
     }
@@ -761,6 +955,15 @@ footer a {
 
     .section-header h2 {
         font-size: 2rem;
+    }
+
+    .about-image {
+        min-height: 360px;
+        border-radius: 22px;
+    }
+
+    .about-image img {
+        min-height: 360px;
     }
 
     .testimonio-slide {
