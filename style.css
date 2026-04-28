@@ -87,7 +87,7 @@ body {
     min-height: 90vh;
     display: flex;
     align-items: center;
-    background: url("img/hero.png") center/cover no-repeat;
+    background: url("hero.png") center/cover no-repeat;
 }
 
 .hero-overlay {
@@ -171,9 +171,6 @@ body {
     gap: 25px;
 }
 
-/* =========================================
-   ESTILO DEL BOTÓN "SOLICITAR"
-   ========================================= */
 .service-card a {
     display: inline-block;
 }
