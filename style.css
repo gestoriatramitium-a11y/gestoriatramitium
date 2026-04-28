@@ -87,7 +87,6 @@ body {
     min-height: 90vh;
     display: flex;
     align-items: center;
-
     background: url("img/hero.png") center/cover no-repeat;
 }
 
@@ -112,7 +111,6 @@ body {
     max-width: 650px;
 }
 
-/* TITULOS */
 .hero h1 {
     font-size: 4rem;
     color: white;
@@ -126,19 +124,16 @@ body {
     color: #e5e7eb;
 }
 
-/* TEXTO */
 .hero p {
     font-size: 1.2rem;
     color: rgba(255,255,255,0.9);
     margin-bottom: 40px;
 }
 
-/* HIGHLIGHT */
 .highlight {
     color: var(--secondary);
 }
 
-/* BOTON */
 .cta-main {
     background: var(--secondary);
     color: white;
@@ -182,9 +177,6 @@ body {
 .service-card a {
     display: inline-block;
 }
-
-
-
 
 .services-section {
     background: linear-gradient(180deg, #f7f9fc 0%, #eef3f8 100%);
@@ -536,26 +528,62 @@ body {
 }
 
 /* =========================================
-   LOGOS
+   LOGOS / EMPRESAS
    ========================================= */
-.clientes-container {
+.clients-section {
+    background: var(--bg-light);
+    overflow: hidden;
+}
+
+.clients-section h2 {
+    color: var(--primary);
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+}
+
+.clientes-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.clientes-viewport {
+    overflow: hidden;
+    width: 100%;
+    padding: 6px 2px;
+}
+
+.clientes-track {
+    display: flex;
+    gap: 40px;
+    will-change: transform;
+}
+
+.cliente-slide {
+    flex: 0 0 calc((100% - 120px) / 4);
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 30px;
 }
 
 .cliente-logo {
+    width: 170px;
+    height: 178px;
     background: white;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cliente-logo img {
     max-width: 130px;
+    max-height: 130px;
+    width: auto;
     height: auto;
+    object-fit: contain;
     opacity: 0.8;
     transition: 0.3s;
 }
@@ -642,6 +670,7 @@ footer a {
         width: 100%;
     }
 }
+
 @media (max-width: 1024px) {
     .featured-services {
         grid-template-columns: 1fr;
@@ -657,6 +686,10 @@ footer a {
 
     .testimonio-slide {
         flex: 0 0 calc((100% - 20px) / 2);
+    }
+
+    .cliente-slide {
+        flex: 0 0 calc((100% - 40px) / 2);
     }
 }
 
@@ -697,7 +730,8 @@ footer a {
         padding: 22px;
     }
 
-    .testimonials-carousel {
+    .testimonials-carousel,
+    .clientes-carousel {
         gap: 10px;
     }
 
@@ -708,12 +742,18 @@ footer a {
 }
 
 @media (max-width: 640px) {
-    .testimonio-slide {
+    .testimonio-slide,
+    .cliente-slide {
         flex: 0 0 100%;
     }
 
     .carousel-control {
         display: none;
+    }
+
+    .cliente-logo {
+        width: 170px;
+        height: 178px;
     }
 }
 
